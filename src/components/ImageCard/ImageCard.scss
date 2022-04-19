@@ -1,3 +1,23 @@
 .imageDiv{
-    border-radius: 10%;
+    border-radius: 7%;
+    cursor: pointer;
+    transition: all;
+    transition-duration: 0.5s;
+}
+
+.imageDiv:hover{
+    filter: brightness(0.5);
+}
+.magnifyIcon{
+    font-size: 5vw;
+    color: white;
+    position: absolute;
+    transition: all;
+    transition-duration: 0.5s;
+    top: 0;
+    cursor: pointer;
+}
+.imageDiv:hover + .magnifyIcon,.magnifyIcon:hover{
+    top: 30%;
+    left: 40%;
 }
