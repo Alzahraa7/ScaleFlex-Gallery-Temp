@@ -1,12 +1,10 @@
 import ImageCard from "../ImageCard/ImageCard";
 import axios from "axios";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import Modal from "../Modal/Modal";
-import { img } from '../../Context/clickedImg';
 const Gallery = () =>{
     const [images,setImages] = useState([]);
     const [IsClicked,setIsClicked] = useState(false);
-    const {clcdImg} = useContext(img);
     useEffect(()=>{
         axios.get('https://scaleflex.cloudimg.io/v7/0.fe_task_static/pictures.json?vh=7a646d&func=proxy')
         .then((response)=>{ setImages(response.data)})
@@ -32,7 +30,7 @@ const Gallery = () =>{
             </div>
         </div>
         {
-            IsClicked && <Modal images={images} clickedImg={clcdImg} imageSize={images.length} />
+            IsClicked && <Modal images={images} setIsClicked={setIsClicked} />
         }
         </>
     )

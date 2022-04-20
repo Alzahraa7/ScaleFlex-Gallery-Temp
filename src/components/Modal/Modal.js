@@ -1,10 +1,21 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft, faAngleRight, faClose } from "@fortawesome/free-solid-svg-icons";
 import "./Modal.scss";
-import { useState } from "react";
-const Modal = ({ clickedImg , imageSize , images }) => {
-    let counter = localStorage.getItem('counter');
-    const [imgIndex,setImgIndex] = useState(counter-1);
+import { useState,useContext } from "react";
+import { img } from "../../Context/clickedImg";
+const Modal = ({ images , setIsClicked}) => {
+    const {clcdImg} = useContext(img);
+    const [imgIndex,setImgIndex] = useState(clcdImg-1);
+    const handleLeft = () =>{
+        if(imgIndex-1>0){
+            setImgIndex(imgIndex-1)
+        }
+    }
+    const handleRight = () =>{
+        if(imgIndex+1<images.length){
+            setImgIndex(imgIndex+1)
+        }
+    }
   return (
     <>
       <div className="imgModal">
@@ -21,11 +32,12 @@ const Modal = ({ clickedImg , imageSize , images }) => {
           </div>
 
           <div className="counterDiv">
-              <p style={{textAlign:'center'}}>image {imgIndex+1}/{imageSize}</p>
+              <p style={{textAlign:'center'}}>image {imgIndex+1}/{images.length}</p>
           </div>
 
-          <FontAwesomeIcon onClick={()=>{setImgIndex(imgIndex-1)}} className="btn arrowLeft" icon={faAngleLeft} />
-          <FontAwesomeIcon onClick={()=>{setImgIndex(imgIndex+1)}} className="btn arrowRight" icon={faAngleRight} />
+          <FontAwesomeIcon onClick={handleLeft} className="btn arrowLeft" icon={faAngleLeft} />
+          <FontAwesomeIcon onClick={handleRight} className="btn arrowRight" icon={faAngleRight} />
+          <FontAwesomeIcon onClick={()=>{setIsClicked(false)}} className="btn closeIcon" icon={faClose} />
         </div>
       </div>
     </>

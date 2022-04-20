@@ -7,8 +7,7 @@ const ImageCard = ({imgObj,setIsClicked, counter}) =>{
     const {setClcdImg} = useContext(img);
     const handleSetters = ()=>{
         setIsClicked(true); 
-        setClcdImg(imgObj); 
-        localStorage.setItem('counter',counter);
+        setClcdImg(counter); 
     }
     return(
         <>

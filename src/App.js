@@ -5,7 +5,7 @@ import Gallery from './components/Gallery/gallery';
 import { ImgProvider } from './Context/clickedImg';
 
 function App() {
-  const [clcdImg, setClcdImg] = useState({});
+  const [clcdImg, setClcdImg] = useState();
   return (
     <>
     <Nav />

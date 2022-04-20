@@ -36,6 +36,13 @@
             @extend .arrowLeft;
             left: 95%;
         }
+        .closeIcon{
+            color:white;
+            position: absolute;
+            top:0;
+            right:0;
+            font-size: 3vw;
+        }
     }
     
 }
