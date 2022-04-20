@@ -7,7 +7,7 @@ const Modal = ({ images , setIsClicked}) => {
     const {clcdImg} = useContext(img);
     const [imgIndex,setImgIndex] = useState(clcdImg-1);
     const handleLeft = () =>{
-        if(imgIndex-1>0){
+        if(imgIndex>0){
             setImgIndex(imgIndex-1)
         }
     }
