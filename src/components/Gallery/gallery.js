@@ -32,7 +32,7 @@ const Gallery = () =>{
             </div>
         </div>
         {
-            IsClicked && <Modal clickedImg={clcdImg} imageSize={images.length} />
+            IsClicked && <Modal images={images} clickedImg={clcdImg} imageSize={images.length} />
         }
         </>
     )

@@ -25,6 +25,17 @@
             background-color: rgba(0,0,0,0.7);
             margin: 10px;
         }
+        .arrowLeft{
+            position: absolute;
+            color: white;
+            left: 0;
+            font-size: 5vw;
+            top: 47%;
+        }
+        .arrowRight{
+            @extend .arrowLeft;
+            left: 95%;
+        }
     }
     
 }
