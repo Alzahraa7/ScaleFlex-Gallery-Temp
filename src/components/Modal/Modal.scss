@@ -8,8 +8,14 @@
   background-color: rgba(0,0,0,0.7);
     .ModalDiv{
         margin: 7% 37%;
-        .selectedImg{
-            border-radius: 3%;
+        .imgNameDiv{
+            position: absolute;
+            bottom: 20.8%;
+            left: 37%;
+            width: 29.7%;
+            color: white;
+            background-color: rgba(0,0,0,0.7);
         }
     }
+    
 }
