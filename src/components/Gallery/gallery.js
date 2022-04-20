@@ -18,11 +18,13 @@ const Gallery = () =>{
         
         <div className="container mt-3">
             <div className="row">
-                {images.map((img)=>{
+                {images.map((img,index)=>{index++;
                     return(
                         <>
                         <div className="col ms-5">
-                            <ImageCard imgObj={img} setIsClicked={setIsClicked}/>
+                            <ImageCard imgObj={img}
+                            counter = {index}
+                            setIsClicked={setIsClicked}/>
                         </div>
                         </>
                     )
@@ -30,7 +32,7 @@ const Gallery = () =>{
             </div>
         </div>
         {
-            IsClicked && <Modal clickedImg={clcdImg} />
+            IsClicked && <Modal clickedImg={clcdImg} imageSize={images.length} />
         }
         </>
     )

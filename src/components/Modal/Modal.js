@@ -1,5 +1,5 @@
 import "./Modal.scss";
-const Modal = ({ clickedImg }) => {
+const Modal = ({ clickedImg , imageSize }) => {
   return (
     <>
       <div className="imgModal">
@@ -14,7 +14,7 @@ const Modal = ({ clickedImg }) => {
             <p style={{ textAlign: "center" }}>{clickedImg.name}</p>
           </div>
           <div className="counterDiv">
-              <p>image 2/30</p>
+              <p style={{textAlign:'center'}}>image {localStorage.getItem('counter')}/{imageSize}</p>
           </div>
         </div>
       </div>
