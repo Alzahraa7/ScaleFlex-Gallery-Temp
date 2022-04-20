@@ -1,14 +1,17 @@
 import './App.css';
-
-import React from 'react';
+import React,{ useState } from 'react';
 import Nav from './layout/NavBar/Nav';
 import Gallery from './components/Gallery/gallery';
-function App() {
+import { ImgProvider } from './Context/clickedImg';
 
+function App() {
+  const [clcdImg, setClcdImg] = useState({});
   return (
     <>
     <Nav />
-    <Gallery />
+    <ImgProvider value={{clcdImg,setClcdImg}}>
+      <Gallery />
+    </ImgProvider>
     
     </>
   );

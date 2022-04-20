@@ -1,16 +1,19 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlassPlus } from '@fortawesome/free-solid-svg-icons';
-import './ImageCard.scss'
-const ImageCard = ({imgSrc}) =>{
-    
+import './ImageCard.scss';
+import Modal from '../Modal/Modal';
+import { useState,useContext } from 'react';
+import { img } from '../../Context/clickedImg';
+const ImageCard = ({imgObj,setIsClicked}) =>{
+    const {clcdImg,setClcdImg} = useContext(img);
     return(
         <>
         <div className="mb-2 position-relative">
-            {/* <div className='overlayImg position-absolute'></div> */}
-            <img className='imageDiv' width='300' height={200} src={imgSrc} alt="imag" />
-        
-            <FontAwesomeIcon className='magnifyIcon' icon={faMagnifyingGlassPlus} />
-            
+            <img className='imageDiv' width='300' height={200} src={imgObj.url} alt="imag" />
+            <FontAwesomeIcon 
+            className='magnifyIcon' 
+            onClick={()=>{setIsClicked(true); setClcdImg(imgObj)}}
+            icon={faMagnifyingGlassPlus} />
         </div>
         </>
     )
